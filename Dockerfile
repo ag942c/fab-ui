@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM python:3.9.7-alpine3.14
 WORKDIR /app
 
 COPY public/ /app/public
