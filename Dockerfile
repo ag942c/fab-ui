@@ -1,5 +1,8 @@
-FROM python:3.9.7-alpine3.14
-RUN pip install flask
-WORKDIR /app
-COPY app.py .
-ENTRYPOINT ["python", "app.py"]
+FROM node:18-alpine
+WORKDIR /fab-ui/
+
+COPY public/ /fab-ui/public
+COPY src/ /fab-ui/src
+COPY package.json /fab-ui/
+RUN npm install
+CMD ["npm", "start"]
